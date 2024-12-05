@@ -111,3 +111,9 @@ function displayGrid() {
 }
 
 // make the drag and drop block section
+ 
+
+// clear the rows if they all get full
+
+
+// 

@@ -114,6 +114,31 @@ function displayGrid() {
  
 
 // clear the rows if they all get full
+function rowCleared(){
+
+  //idk if this approach will even work
+  for (let y = 0; y < GRID_SIZE; y++) {
+    if(grid[y] === 1){
+      grid[y] === 0;
+    }
+  }
+
+  for (let x = 0; x < GRID_SIZE; x++) {
+    if(grid[x] === 1){
+      grid[x] === 0;
+    }
+  }
+
+  // another approach I could try
+  cellCounter = 0;
+
+  for (let y = 0; y < GRID_SIZE; y++) {
+    for (let x = 0; x < GRID_SIZE; x++) {
+      // idk
+    }
+  }
+}
+
 
 
 // 

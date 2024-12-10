@@ -169,7 +169,8 @@ function placeBlock(blockIndex) {
       let y = gridY + block[i][1];
       if (x < gridSize && y < gridSize && grid[y][x] === 0) {
         grid[y][x] = 1;
-      } else {
+      } 
+      else {
         return;
       }
     }

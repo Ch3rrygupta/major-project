@@ -71,7 +71,7 @@ let selectedBlock = null;
 let mouseOffset = { x: 0, y: 0 };
 
 function setup() {
-  createCanvas(gridSize * cellSize + 200, gridSize * cellSize);
+  createCanvas(gridSize * cellSize + 400, gridSize * cellSize + 100);
   initializeGrid();
   generateBlocks();
 }
@@ -97,7 +97,7 @@ function drawGrid() {
     for (let j = 0; j < gridSize; j++) {
       fill(grid[i][j] ? 'black' : 'white');
       stroke(0);
-      rect(j * cellSize, i * cellSize, cellSize, cellSize);
+      rect(j * cellSize + 20, i * cellSize + cellSize, cellSize, cellSize);
     }
   }
 }
@@ -106,7 +106,7 @@ function generateBlocks() {
   currentBlocks = [];
   for (let i = 0; i < 3; i++) {
     let block = [];
-    let blockSize = int(random(1, 4)); // Random block size (1 to 3 cells)
+    let blockSize = int(random(1, 6)); // Random block size (1 to 5 cells)
     for (let j = 0; j < blockSize; j++) {
       block.push([j, 0]); // Simple horizontal blocks for simplicity
     }
@@ -123,7 +123,7 @@ function drawBlocks() {
       let y = 100 + i * 100 + block[j][1] * cellSize + (i === selectedBlock ? mouseY - mouseOffset.y : 0);
       fill('purple');
       stroke(0);
-      rect(x, y, cellSize, cellSize);
+      rect(x + 20, y + 20, cellSize, cellSize);
     }
   }
 }
@@ -131,7 +131,7 @@ function drawBlocks() {
 function displayScore() {
   fill(0);
   textSize(16);
-  text('Score: ' + score, gridSize * cellSize + 20, 50);
+  text('Score: ' + score, gridSize * cellSize + 40, 50);
 }
 
 function mousePressed() {
@@ -170,7 +170,7 @@ function placeBlock(blockIndex) {
       if (x < gridSize && y < gridSize && grid[y][x] === 0) {
         grid[y][x] = 1;
       } 
-      else {
+      else { 
         return;
       }
     }

@@ -95,7 +95,7 @@ function initializeGrid() {
 function drawGrid() {
   for (let i = 0; i < gridSize; i++) {
     for (let j = 0; j < gridSize; j++) {
-      fill(grid[i][j] ? 'pink' : 'white');
+      fill(grid[i][j] ? 'black' : 'white');
       stroke(0);
       rect(j * cellSize, i * cellSize, cellSize, cellSize);
     }

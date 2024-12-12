@@ -69,6 +69,7 @@ let currentBlocks = [];
 let score = 0;
 let selectedBlock = null;
 let mouseOffset = { x: 0, y: 0 };
+let colors = ["yellow", "pink", "purple", "green", "blue", "orange"];
 
 function setup() {
   createCanvas(gridSize * cellSize + 400, gridSize * cellSize + 100);
@@ -121,7 +122,7 @@ function drawBlocks() {
     for (let j = 0; j < block.length; j++) {
       let x = xOffset + block[j][0] * cellSize + (i === selectedBlock ? mouseX - mouseOffset.x : 0);
       let y = 100 + i * 100 + block[j][1] * cellSize + (i === selectedBlock ? mouseY - mouseOffset.y : 0);
-      fill('purple');
+      fill("yellow");
       stroke(0);
       rect(x + 20, y + 20, cellSize, cellSize);
     }

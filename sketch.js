@@ -78,7 +78,7 @@ function setup() {
 }
 
 function draw() {
-  background(184,245, 255);
+  background(184, 245, 255);
   drawGrid();
   drawBlocks();
   displayScore();

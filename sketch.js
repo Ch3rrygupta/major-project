@@ -1,6 +1,6 @@
 // Block Blast
 // Cherry Gupta
-// Due sometime in january!!!
+// Due January 21st, Presenting January 16th
 
 
 let bigLBlock = [
@@ -9,14 +9,30 @@ let bigLBlock = [
   [1, 1, 1]
 ];
 
+let backwardLBlock = [
+  [0, 0, 1],
+  [0, 0, 1],
+  [1, 1, 1]
+];
+
 let medLBlock = [
   [1, 0],
   [1, 0],
   [1, 1]
 ];
+let backwardMedLBock = [
+  [0, 1],
+  [0, 1],
+  [1, 1]
+];
 
 let smallLBlock = [
   [1, 0],
+  [1, 1]
+];
+
+let backwardSamllLBlock = [
+  [0, 1],
   [1, 1]
 ];
 

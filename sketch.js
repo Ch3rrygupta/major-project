@@ -86,11 +86,13 @@ let score = 0;
 let selectedBlock = null;
 let mouseOffset = { x: 0, y: 0 };
 let colors = ["yellow", "pink", "purple", "green", "blue", "orange"];
+let clickSound;
 
 function setup() {
   createCanvas(gridSize * cellSize + 400, gridSize * cellSize + 100);
   initializeGrid();
   generateBlocks();
+  clickSound.amp(1.0);
 }
 
 function draw() {
@@ -98,7 +100,13 @@ function draw() {
   drawGrid();
   drawBlocks();
   displayScore();
+  
 }
+function preload(){
+  clickSound = loadSound("click.wav");
+
+}
+
 
 function initializeGrid() {
   for (let i = 0; i < gridSize; i++) {

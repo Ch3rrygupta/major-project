@@ -87,6 +87,7 @@ let selectedBlock = null;
 let mouseOffset = { x: 0, y: 0 };
 let colors = ["yellow", "pink", "purple", "green", "blue", "orange"];
 let clickSound;
+let excellentSound;
 
 function setup() {
   createCanvas(gridSize * cellSize + 400, gridSize * cellSize + 100);
@@ -104,7 +105,7 @@ function draw() {
 }
 function preload(){
   clickSound = loadSound("click.wav");
-
+  excellentSound = loadSound("excellent.mp3");
 }
 
 

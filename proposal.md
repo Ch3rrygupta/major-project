@@ -5,8 +5,8 @@ In this game the objective is so reach the highest score possible by filling up 
 ## Needs to Have
 - different preset shapes of blocks that come in as random
 - be able to place the block in the grid and move it around while the mouse is still pressed (drag and drop)
-- once a row is full, the blocks should light up dissolve
-- filling up  row should increase the score
+- once a row is full, the blocks should dissolve
+- filling up a row should increase the score
 - once there are no spaces left to place the blocks at the bottom, it should say there are no spaces left
 - the sound effects in the actual game
 

@@ -94,6 +94,7 @@ function setup() {
   initializeGrid();
   generateBlocks();
   clickSound.amp(1.0);
+  excellentSound.amp(1.0);
 }
 
 function draw() {

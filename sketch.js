@@ -115,7 +115,7 @@ function initializeGrid() {
     grid[i] = [];
     for (let j = 0; j < gridSize; j++) {
       grid[i][j] = 0;
-    }
+    } 
   }
 }
 

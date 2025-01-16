@@ -246,3 +246,32 @@ function checkRowsAndColumns() {
   }
 }
 
+drawStartScreen() {
+  background(184, 245, 255);
+  fill(0);
+  textAlign(CENTER, CENTER);
+  textSize(48);
+  text("BlockBlast", width / 2, height / 2 - 50);
+  textSize(24);
+  text("Click to Start", width / 2, height / 2);
+}
+
+drawEndScreen() {
+  background(184, 245, 255);
+  fill(0);
+  textAlign(CENTER, CENTER);
+  textSize(48);
+  text("Game Over", width / 2, height / 2 - 50);
+  textSize(24);
+  text("Score: " + this.score, width / 2, height / 2);
+  text("High Score: " + this.highScore, width / 2, height / 2 + 30);
+  text("Click to Play Again", width / 2, height / 2 + 60);
+}
+
+resetGame(){
+  this.score = 0;
+  this.initializeGrid();
+  this.generateBlocks();
+  this.state = "playing";
+}
+

@@ -90,8 +90,8 @@ class Game {
   displayScore() {
     fill(0);
     textSize(16);
-    text("Score: " + this.score, this.gridSize * this.cellSize + 40, 50);
-    text("High Score: " + this.highScore, this.gridSize * this.cellSize + 40, 70);
+    text("Score: " + this.score, this.gridSize * this.cellSize + 100, 50);
+    text("High Score: " + this.highScore, this.gridSize * this.cellSize + 100, 70);
   }
 
   canPlaceBlock(block, gridX, gridY) {
@@ -179,8 +179,8 @@ class Game {
     background(184, 245, 255);
     fill(0);
     textAlign(CENTER, CENTER);
-    textSize(48);
-    text("Game Over", width / 2, height / 2 - 50);
+    textSize(60);
+    text("NO SPACES LEFT", width / 2, height / 2 - 50);
     textSize(24);
     text("Score: " + this.score, width / 2, height / 2);
     text("High Score: " + this.highScore, width / 2, height / 2 + 30);
@@ -279,7 +279,7 @@ let blockShapes = [
 ];
 
 function setup() {
-  createCanvas(600, 600);
+  createCanvas(750, 550);
   game = new Game(8, 50);
   game.initializeGrid();
 }

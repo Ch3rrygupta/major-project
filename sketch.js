@@ -3,6 +3,28 @@
 // Due January 21st, Presenting January 16th
 
 
+class Block {
+  constructor(shape, color) {
+    this.shape = shape;
+    this.color = color;
+  }
+}
+
+class Game {
+  constructor(gridSize, cellSize) {
+    this.gridSize = gridSize;
+    this.cellSize = cellSize;
+    this.grid = [];
+    this.currentBlocks = [];
+    this.score = 0;
+    this.highScore = 0;
+    this.selectedBlock = null;
+    this.mouseOffset = { x: 0, y: 0 };
+    this.colors = ["yellow", "pink", "purple", "green", "blue", "orange"];
+    this.state = "start"; // start, playing, end
+  }
+}
+
 let bigLBlock = [
   [1, 0, 0],
   [1, 0, 0],

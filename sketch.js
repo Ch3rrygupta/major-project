@@ -204,12 +204,14 @@ class Game {
   draw() {
     if (this.state === "start") {
       this.drawStartScreen();
-    } else if (this.state === "playing") {
+    }
+    else if (this.state === "playing") {
       background(184, 245, 255);
       this.drawGrid();
       this.drawBlocks();
       this.displayScore();
-    } else if (this.state === "end") {
+    }
+    else if (this.state === "end") {
       this.drawEndScreen();
     }
   }
@@ -292,9 +294,11 @@ function draw() {
 function mousePressed() {
   if (game.state === "start") {
     game.resetGame();
-  } else if (game.state === "end") {
+  }
+  else if (game.state === "end") {
     game.resetGame();
-  } else if (game.state === "playing") {
+  }
+  else if (game.state === "playing") {
     for (let block of game.currentBlocks) {
       if (block.containsPoint(mouseX, mouseY, game.cellSize)) {
         game.draggedBlock = block;

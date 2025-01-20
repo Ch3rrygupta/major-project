@@ -97,6 +97,7 @@ class Game {
   canPlaceBlock(block, gridX, gridY) {
     for (let row = 0; row < block.shape.length; row++) {
       for (let col = 0; col < block.shape[row].length; col++) {
+        
         if (block.shape[row][col] === 1) {
           let x = gridX + col;
           let y = gridY + row;

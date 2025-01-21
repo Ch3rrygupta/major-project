@@ -1,5 +1,8 @@
 // BlockBlast Game with OOP, Drag-and-Drop, Start Screen, and End Screen
 
+let dropSound;
+let excellentSound;
+
 class Block {
   constructor(shape, color) {
     this.shape = shape;
@@ -37,6 +40,7 @@ class Game {
     this.offset = { x: 0, y: 0 };
     this.colors = ["pink","yellow", "purple", "green", "blue", "orange"];
     this.state = "start"; // start, playing, end
+    
   }
 
   initializeGrid() {
@@ -91,7 +95,7 @@ class Game {
     fill(255, 222, 0);
     textSize(16);
     text("Score: " + this.score, this.gridSize * this.cellSize + 100, 50);
-    text("High Score: " + this.highScore, this.gridSize * this.cellSize + 100, 70);
+    text(" 👑 High Score: " + this.highScore, this.gridSize * this.cellSize + 100, 70);
   }
 
   canPlaceBlock(block, gridX, gridY) {
@@ -141,6 +145,7 @@ class Game {
       if (this.grid[i].every((cell) => cell === 1)) {
         this.grid[i] = this.grid[i].map(() => 0);
         this.score += this.gridSize;
+        
       }
     }
     for (let j = 0; j < this.gridSize; j++) {
@@ -149,6 +154,7 @@ class Game {
           this.grid[i][j] = 0;
         }
         this.score += this.gridSize;
+        
       }
     }
   }
@@ -184,7 +190,7 @@ class Game {
     text("NO SPACES LEFT", width / 2, height / 2 - 50);
     textSize(24);
     text("Score: " + this.score, width / 2, height / 2);
-    text("High Score: " + this.highScore, width / 2, height / 2 + 30);
+    text(" 👑 High Score: " + this.highScore, width / 2, height / 2 + 30);
     text("Click to Play Again", width / 2, height / 2 + 60);
   }
 

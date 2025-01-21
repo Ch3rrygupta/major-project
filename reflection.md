@@ -1,19 +1,19 @@
-What advice would you give to yourself if you were to start a project like this again?
+## What advice would you give to yourself if you were to start a project like this again?
  
-If I were to start this project again, I would focus on breaking the game mechanics into small, testable pieces and implement them one at a time. Starting with a clear plan for the grid system, block generation, and user interaction would make debugging easier. I would also prioritize creating reusable and modular functions to handle specific tasks like block placement or game state transitions, which would simplify updates and future enhancements.
+If I were to start this project again, I would focus on breaking the game mechanics into small, testable pieces and implement them one at a time. Starting with a clear plan for the grid system, block generation, and user interaction would make debugging easier. I would also prioritize creating reusable and modular functions to handle specific tasks like block placement or game state transitions, which would simplify updates and future enhancements. I would also try to steer clear of procrastinating!!!
 
-Did you complete everything in your “needs to have” list?
+## Did you complete everything in your “needs to have” list?
 
-Yes, all the essential features were implemented successfully. This includes a functional grid system, draggable blocks, proper placement logic, scoring, and transitions between start, gameplay, and end screens. Additionally, I included the condition to check when no valid moves are left, ensuring the game ends properly. While some enhancements like animations were beyond the scope, the core functionality works seamlessly.
-
-
-
-What was the hardest part of the project?
-
-The most challenging part was implementing the block placement mechanics, specifically ensuring that blocks could only fit in valid positions on the grid without overlapping or exceeding boundaries. It required careful planning to accurately translate the block’s grid-based shape into screen coordinates and verify placement validity. Debugging this involved repeatedly testing edge cases, such as blocks near the grid's boundaries or partially overlapping positions.
+Yes, all the essential features were implemented successfully. This includes a functional grid system, draggable blocks, proper placement logic, scoring, and transitions between start, gameplay, and end screens. I included the condition to check when no valid moves are left, ensuring the game ends properly. While some enhancements like animations were beyond the scope, the core functionality works seamlessly.
 
 
 
-Were there any problems you could not solve?
+## What was the hardest part of the project?
 
-One issue that wasn’t fully addressed was snapping blocks to the grid as they’re dragged. While the placement logic works well after releasing a block, implementing a smooth snapping mechanism during dragging proved tricky within the given timeline. This could improve user experience and is something I’d like to revisit in future versions.
+The most challenging part was implementing the block placement mechanics, specifically ensuring that blocks could only fit in valid positions on the grid without overlapping or exceeding boundaries. It required careful planning to accurately translate the block’s grid-based shape into screen coordinates and verify placement validity.
+
+
+## Were there any problems you could not solve?
+I decided to add some sound effects, however, everytime I tried to add them in the code, the game would break, so out of fear I laft that portion alone. in the future if I had more time, I would try to figure that out!
+
+Overall I'm super proud of my project! I took my block blast addiction adn turned it into somethine I could learn with! Considering that I don't really know what I'm doing when it comes to computer science, I'm glad to see how my project turned out!

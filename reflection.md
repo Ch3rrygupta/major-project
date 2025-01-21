@@ -4,8 +4,7 @@ If I were to start this project again, I would focus on breaking the game mechan
 
 ## Did you complete everything in your “needs to have” list?
 
-Yes, all the essential features were implemented successfully. This includes a functional grid system, draggable blocks, proper placement logic, scoring, and transitions between start, gameplay, and end screens. I included the condition to check when no valid moves are left, ensuring the game ends properly. While some enhancements like animations were beyond the scope, the core functionality works seamlessly.
-
+Yes, all the essential features were implemented successfully. This includes a functional grid system, draggable blocks, proper placement logic, scoring, and transitions between start, gameplay, and end screens. I included the condition to check when no valid moves are left, ensuring the game ends properly.
 
 
 ## What was the hardest part of the project?

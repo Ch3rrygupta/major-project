@@ -1,8 +1,14 @@
-// BlockBlast Game with OOP, Drag-and-Drop, Start Screen, and End Screen
+// Block Blast!
+// Cherry Gupta
+// Jan 21, 2025
 
-let dropSound;
-let excellentSound;
+// Project Description:
+// Recreate a simpler and computer version of block blast! 
+// In this game the objective is so reach the highest score possible by filling up rows and columns in a grid with random block shapes given to user my the code.
 
+
+
+// Block Class, will manage everything to do with blocks
 class Block {
   constructor(shape, color) {
     this.shape = shape;
@@ -12,6 +18,7 @@ class Block {
     this.isDragging = false;
   }
 
+  // checking if a point is somewhere in the block
   containsPoint(px, py, cellSize) {
     for (let row = 0; row < this.shape.length; row++) {
       for (let col = 0; col < this.shape[row].length; col++) {
@@ -28,6 +35,8 @@ class Block {
   }
 }
 
+
+// game class, manages everything to do with the gameplay
 class Game {
   constructor(gridSize, cellSize) {
     this.gridSize = gridSize;
@@ -43,6 +52,7 @@ class Game {
     
   }
 
+  // sets all data for grid
   initializeGrid() {
     for (let i = 0; i < this.gridSize; i++) {
       this.grid[i] = [];
@@ -52,6 +62,7 @@ class Game {
     }
   }
 
+  // generate the blocks
   generateBlocks() {
     this.currentBlocks = [];
     for (let i = 0; i < 3; i++) {
@@ -65,9 +76,11 @@ class Game {
     }
   }
 
+  // draw the grid
   drawGrid() {
     for (let i = 0; i < this.gridSize; i++) {
       for (let j = 0; j < this.gridSize; j++) {
+        // navy when square value is 0,  gold when it is filled
         fill(this.grid[i][j] ? "gold" : "navy");
         stroke(0);
         rect(j * this.cellSize + 20, i * this.cellSize + this.cellSize, this.cellSize, this.cellSize);
@@ -75,6 +88,7 @@ class Game {
     }
   }
 
+  // draw the blocks
   drawBlocks() {
     for (let block of this.currentBlocks) {
       for (let row = 0; row < block.shape.length; row++) {
@@ -91,6 +105,8 @@ class Game {
     }
   }
 
+
+  // display the scores in the screen
   displayScore() {
     fill(255, 222, 0);
     textSize(16);
@@ -98,6 +114,8 @@ class Game {
     text(" 👑 High Score: " + this.highScore, this.gridSize * this.cellSize + 100, 70);
   }
 
+
+  // check if the block can be placed in a spot
   canPlaceBlock(block, gridX, gridY) {
     for (let row = 0; row < block.shape.length; row++) {
       for (let col = 0; col < block.shape[row].length; col++) {
@@ -120,10 +138,13 @@ class Game {
     return true;
   }
 
+
+  // places the block after checking if it can even be placed
   placeBlock(block) {
     let gridX = floor((block.x - 20) / this.cellSize);
     let gridY = floor((block.y - this.cellSize) / this.cellSize);
 
+    // checks if block can be placed
     if (this.canPlaceBlock(block, gridX, gridY)) {
       for (let row = 0; row < block.shape.length; row++) {
         for (let col = 0; col < block.shape[row].length; col++) {
@@ -140,6 +161,7 @@ class Game {
     }
   }
 
+  // check if there are any rows and colums that are full
   checkRowsAndColumns() {
     for (let i = 0; i < this.gridSize; i++) {
       if (this.grid[i].every((cell) => cell === 1)) {
@@ -159,6 +181,7 @@ class Game {
     }
   }
 
+  // checks if there are any moves left
   canPlaceAnyBlock() {
     for (let block of this.currentBlocks) {
       for (let y = 0; y < this.gridSize; y++) {
@@ -172,6 +195,7 @@ class Game {
     return false;
   }
 
+  // draw the start screen
   drawStartScreen() {
     background(70, 100, 185);
     fill(255, 222, 0);
@@ -182,6 +206,7 @@ class Game {
     text("Click to Start", width / 2, height / 2);
   }
 
+  // draws the ending screen
   drawEndScreen() {
     background(70, 100, 185);
     fill(255, 222, 0);
@@ -194,6 +219,7 @@ class Game {
     text("Click to Play Again", width / 2, height / 2 + 60);
   }
 
+  // resets the game after the round is over or after the game starts
   resetGame() {
     this.score = 0;
     this.initializeGrid();
@@ -201,6 +227,7 @@ class Game {
     this.state = "playing";
   }
 
+  // updates the data after each moves, checks if the game state needs to be changed
   update() {
     if (this.state === "playing" && !this.canPlaceAnyBlock()) {
       this.state = "end";
@@ -208,6 +235,7 @@ class Game {
     }
   }
 
+  // draws the game
   draw() {
     if (this.state === "start") {
       this.drawStartScreen();
@@ -225,6 +253,8 @@ class Game {
 }
 
 let game;
+
+// Hard coding all the different block shapes
 let blockShapes = [
   [
     [1, 0, 0],
@@ -287,21 +317,27 @@ let blockShapes = [
   [[1]]
 ];
 
+// initialize everuything to ensure the game looks how I want
 function setup() {
   createCanvas(750, 550);
   game = new Game(8, 50);
   game.initializeGrid();
 }
 
+// using the game class to keep the draw loop clean, calls the draw after each move and check it the game state needs to update
 function draw() {
   game.update();
   game.draw();
 }
 
+
+
 function mousePressed() {
+  // click the start screen
   if (game.state === "start") {
     game.resetGame();
   }
+  // resets the game after losing
   else if (game.state === "end") {
     game.resetGame();
   }
@@ -318,6 +354,7 @@ function mousePressed() {
   }
 }
 
+// will pick up the block while the mouse it dragged
 function mouseDragged() {
   if (game.draggedBlock) {
     game.draggedBlock.x = mouseX - game.offset.x;
@@ -325,6 +362,7 @@ function mouseDragged() {
   }
 }
 
+// will then check if the block is in a valid spot
 function mouseReleased() {
   if (game.draggedBlock) {
     game.placeBlock(game.draggedBlock);

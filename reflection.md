@@ -13,6 +13,6 @@ The most challenging part was implementing the block placement mechanics, specif
 
 
 ## Were there any problems you could not solve?
-I decided to add some sound effects, however, everytime I tried to add them in the code, the game would break, so out of fear I laft that portion alone. in the future if I had more time, I would try to figure that out!
+I decided to add some sound effects, however, everytime I tried to add them in the code, the game would break, so out of fear I left that portion alone. in the future if I had more time, I would try to figure that out!
 
 Overall I'm super proud of my project! I took my block blast addiction adn turned it into somethine I could learn with! Considering that I don't really know what I'm doing when it comes to computer science, I'm glad to see how my project turned out!

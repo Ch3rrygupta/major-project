@@ -35,7 +35,7 @@ class Game {
     this.highScore = 0;
     this.draggedBlock = null;
     this.offset = { x: 0, y: 0 };
-    this.colors = ["yellow", "pink", "purple", "green", "blue", "orange"];
+    this.colors = ["pink","yellow", "purple", "green", "blue", "orange"];
     this.state = "start"; // start, playing, end
   }
 
@@ -64,7 +64,7 @@ class Game {
   drawGrid() {
     for (let i = 0; i < this.gridSize; i++) {
       for (let j = 0; j < this.gridSize; j++) {
-        fill(this.grid[i][j] ? "black" : "white");
+        fill(this.grid[i][j] ? "gold" : "navy");
         stroke(0);
         rect(j * this.cellSize + 20, i * this.cellSize + this.cellSize, this.cellSize, this.cellSize);
       }
@@ -88,7 +88,7 @@ class Game {
   }
 
   displayScore() {
-    fill(0);
+    fill(255, 222, 0);
     textSize(16);
     text("Score: " + this.score, this.gridSize * this.cellSize + 100, 50);
     text("High Score: " + this.highScore, this.gridSize * this.cellSize + 100, 70);
@@ -167,18 +167,18 @@ class Game {
   }
 
   drawStartScreen() {
-    background(184, 245, 255);
-    fill(0);
+    background(70, 100, 185);
+    fill(255, 222, 0);
     textAlign(CENTER, CENTER);
-    textSize(48);
-    text("BlockBlast", width / 2, height / 2 - 50);
+    textSize(60);
+    text("BLOCK BLAST", width / 2, height / 2 - 50);
     textSize(24);
     text("Click to Start", width / 2, height / 2);
   }
 
   drawEndScreen() {
-    background(184, 245, 255);
-    fill(0);
+    background(70, 100, 185);
+    fill(255, 222, 0);
     textAlign(CENTER, CENTER);
     textSize(60);
     text("NO SPACES LEFT", width / 2, height / 2 - 50);
@@ -207,7 +207,7 @@ class Game {
       this.drawStartScreen();
     }
     else if (this.state === "playing") {
-      background(184, 245, 255);
+      background(70, 100, 185);
       this.drawGrid();
       this.drawBlocks();
       this.displayScore();
